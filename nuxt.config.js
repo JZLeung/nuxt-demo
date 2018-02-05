@@ -24,7 +24,10 @@ module.exports = {
         }, {
             rel: 'stylesheet',
             href: 'https://cdn.bootcss.com/mini.css/2.3.7/mini-default.min.css'
-        }]
+        }],
+        script: [
+            {src: 'https://hm.baidu.com/hm.js?a8f76b33f969e78c5e0166414e724649'}
+        ]
     },
     css: [
         {src: '~assets/styles/common.scss', lang: 'sass'}
@@ -67,6 +70,7 @@ module.exports = {
         '~plugins/global',
         '~plugins/axios',
         '~plugins/filters',
+        '~plugins/ga',
     ],
     build: {
         /*

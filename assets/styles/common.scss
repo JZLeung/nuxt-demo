@@ -1,7 +1,26 @@
+@import './mixins';
+
 .avatar{
     display: inline-block;
     width: 25px;
     height: 25px;
     overflow: hidden;
     border-radius: 999px;
+}
+
+.topic{
+    display: block;
+    &--title{
+        text-decoration: none;
+        font-size: inherit
+    }
+    &--info{
+        @extend %verticalCenter;
+        span, mark{
+            margin-right: 5px;
+        }
+        mark{
+            font-size: 0.8em;
+        }
+    }
 }

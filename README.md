@@ -2,7 +2,7 @@
 
 > A Nuxt.js project for CNode.js
 
-[Live Demo](https://nuxt-demo-txcijhplwx.now.sh/)
+[Live Demo](https://nuxt-demo-emowdvvyte.now.sh/)
 
 [Tutorial (in Chinese)](https://segmentfault.com/a/1190000013139139)
 

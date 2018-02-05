@@ -3,7 +3,7 @@ module.exports = {
      ** Headers of the page
      */
     head: {
-        title: 'nuxt-demo',
+        titleTemplate: '%s - CNode 社区',
         meta: [{
             charset: 'utf-8'
         },

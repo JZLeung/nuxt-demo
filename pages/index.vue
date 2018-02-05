@@ -5,8 +5,8 @@
             <div class="col-sm-12 col-md-8">
                 <div class="card fluid topic" v-for="topic in list" :key="topic.id" >
                     <div class="section">
-                        <h3><nuxt-link :to="{name: 'topic-id', params: {id: topic.id}}" class="topic-title">{{topic.title}}</nuxt-link></h3>
-                        <p class="topic-info">
+                        <h3><nuxt-link :to="{name: 'topic-id', params: {id: topic.id}}" class="topic--title">{{topic.title}}</nuxt-link></h3>
+                        <p class="topic--info">
                             <mark v-if="topic.top" class="tertiary">精华</mark>
                             <mark v-else>{{tabsObj[topic.tab]}}</mark>
                             <span class="avatar">
@@ -63,9 +63,30 @@ export default {
             return {list: res.data}
         })
     },
+    methods: {
+        getData() {
+            this.$axios.$get(`topics?tab=${this.$route.query.tab || ''}`).then(res => {
+                // console.log(res)
+                // console.log(JSON.parse(res))
+                // return {list: res.data}
+                this.list = res.data
+            })
+        }
+    },
+    head() {
+        return {
+            title: '首页' + (this.$route.query.tab ? `- ${this.tabsObj[this.$route.query.tab]}` : ''),
+            meta: [{
+                hid: 'description',
+                name: 'description',
+                content: 'CNode：Node.js专业中文社区'
+            }]
+        }
+    },
     watch: {
         '$route': function() {
             console.log('$route has changed.')
+            this.getData()
         }
     }
 }

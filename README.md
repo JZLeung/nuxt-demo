@@ -1,22 +1,17 @@
 # nuxt-demo
 
-> Nuxt.js project
+> A Nuxt.js project for CNode.js
 
-## Build Setup
+[Live Demo](https://nuxt-demo-txcijhplwx.now.sh/)
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+[Tutorial (in Chinese)](https://segmentfault.com/a/1190000013139139)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+##  Technology Stack
+-   [vue2](https://github.com/vuejs/vue)
+-   [nuxt.js](https://github.com/nuxt/nuxt.js)
+-   [vuex](https://github.com/vuejs/vuex/)
+-   [@nuxtjs/axios](https://github.com/nuxt-community/axios-module)
+-   [mini.css](https://github.com/Chalarangelo/mini.css)
 
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+##  License
+nuxt-demo is an open-source framework and is licensed under the [MIT License](https://github.com/Chalarangelo/mini.css/blob/master/LICENSE).

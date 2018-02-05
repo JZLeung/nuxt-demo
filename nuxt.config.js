@@ -66,12 +66,21 @@ module.exports = {
     plugins: [
         '~plugins/global',
         '~plugins/axios',
+        '~plugins/filters',
     ],
     build: {
         /*
          ** Run ESLint on save
          */
         extend(config, { isDev, isClient }) {
+            const sassResourcesLoader = {  
+                loader: 'sass-resources-loader',  
+                options: {  
+                    resources: [  
+                        'assets/styles/mixins.scss'  
+                    ]
+                }  
+            } 
             if (isDev && isClient) {
                 config.module.rules.push({
                     enforce: 'pre',
@@ -80,6 +89,15 @@ module.exports = {
                     exclude: /(node_modules)/
                 })
             }
+            config.module.rules.forEach((rule) => {  
+                if (rule.test.toString() === '/\\.vue$/') {  
+                    rule.options.loaders.sass.push(sassResourcesLoader)  
+                    rule.options.loaders.scss.push(sassResourcesLoader)  
+                }  
+                if (['/\\.sass$/', '/\\.scss$/'].indexOf(rule.test.toString()) !== -1) {  
+                    rule.use.push(sassResourcesLoader)  
+                }  
+            })  
         }
     }
 }
